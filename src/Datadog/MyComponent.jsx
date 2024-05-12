@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import { datadogRum } from '@datadog/browser-rum';
 
 const MyComponent = ({prop}) => {
@@ -28,8 +28,7 @@ const MyComponent = ({prop}) => {
       // datadogRum.setGlobalContext('username','Ajith')
       // datadogRum.setGlobalContext(prop)
       // console.log(prop);
-      datadogRum.addAction('Submitted')
-      console.log("Submitted");
+      datadogRum.addAction('Monitor Created')
       prop(true);
     }
 
