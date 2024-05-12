@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+import React, { useState } from 'react'
 
 const Form = ({prop,cform}) => {
 
@@ -14,8 +15,11 @@ const Form = ({prop,cform}) => {
         console.log(data);
     }
      
-    let handleClick=()=>{
+    let handleClick=(e)=>{
+        e.preventDefault()
         cform(false)
+        let paylaod = data;
+        axios.post('http://localhost:3001/Data',paylaod)
     }
 
   return (

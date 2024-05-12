@@ -3,13 +3,18 @@ import axios from 'axios';
 
 const Table = () => {
   const [data, setData] = useState([]);
-  
+
+  const fetch =()=>{
+    return axios.get("http://localhost:3001/Data").then(resp => resp.data)
+  }
+
+  const resp = ()=>{
+    fetch().then(data=> setData(data))
+  }
+
   useEffect(()=>{
-    const resp = axios.get("http://localhost:3001/Data").then((resp)=>{
-        setData(resp.data)
-        
-    })
-  },[])
+    resp()
+  },[resp])
 
   return (
     <div className='table_main'>
