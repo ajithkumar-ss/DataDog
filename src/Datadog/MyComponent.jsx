@@ -28,7 +28,9 @@ const MyComponent = ({prop}) => {
       // datadogRum.setGlobalContext('username','Ajith')
       // datadogRum.setGlobalContext(prop)
       // console.log(prop);
+
       datadogRum.addAction('Monitor Submitted')
+      datadogRum.addAction('Monitor Created')
       prop(true);
     }
 
