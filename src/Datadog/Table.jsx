@@ -8,13 +8,13 @@ const Table = () => {
     return axios.get("http://localhost:3001/Data").then(resp => resp.data)
   }
 
-  const resp = ()=>{
-    fetch().then(data=> setData(data))
-  }
-
   useEffect(()=>{
-    resp()
-  },[resp])
+    const fetchdata = async() =>{
+        const newdata = await fetch();
+        setData(newdata);
+    }
+    fetchdata()
+  },[])
 
   return (
     <div className='table_main'>
